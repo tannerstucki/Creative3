@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <title>Creative 3</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 style="text-align: center">Quote Mystery Box</h1>
+            <p>
+	<button v-on:click="previousComic">Previous</button>
+	<button v-on:click="nextComic">Next</button>
+    <button style="float: right" v-on:click="randomComic">Random</button>       
+           <p>
+      </p>
+      <div v-if="loading">
+	<p>Good things come to those who wait...</p>
+      </div>
+      <div v-else>
+        <div class="container">
+        <img src="img/river.jpg" alt="flowers" style="width:100%;">
+          <div class="centered">
+        <h2>{{ current.quote }}</h2>
+        <h3> - {{ current.author }}</h3>
+      </div>
+        </div>
+          <img class="icon" src="img/approve.png" style="width:50px; margin-right: 25px; margin-top: 50px;" v-on:click="imgClick"></img>
+          <img class="icon" src="img/disapprove.png" style="width:50px; margin-right: 25px; margin-top: 50px;" v-on:click="imgClick2"></img>
+          <p class="one">Likes:     {{ totalLikes[number] }}</p>
+          <p class="one">Dislikes:  {{ totalDislikes[number] }}</p>
+          <div id="app">
+</div>
+  	<h3>Add a Comment</h3>
+	<form v-on:submit.prevent="addComment">
+	  <input v-model="addedName" placeholder="Name"></p>
+	  <textarea v-model="addedComment"></textarea>
+	  <br/>
+	  <button type="submit">Comment</button>
+	</form>
+	<h3>Comments</h3>
+	<div v-for="comment in comments[number]">
+	  <hr>
+	  <p>{{comment.text}}</p>
+	  <p><i>-- {{comment.author}}&nbsp{{comment.when}}</i></p>
+	</div>
+  </div>
+      <footer class="footer text-center py-5">
+      <div class="container" height="50px">
+        <a href="https://github.com/tannerstucki/Creative3" target="_blank" class="m-0 small">My Github for this project</p></a>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
+    <script src="js/vue-charts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+    <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
