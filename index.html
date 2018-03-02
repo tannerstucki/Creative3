@@ -20,14 +20,14 @@
       </div>
       <div v-else>
         <div class="container">
-        <img src="img/river.jpg" alt="flowers" style="width:100%;">
+        <img src="river.jpg" alt="flowers" style="width:100%;">
           <div class="centered">
         <h2>{{ current.quote }}</h2>
         <h3> - {{ current.author }}</h3>
       </div>
         </div>
-          <img class="icon" src="img/approve.png" style="width:50px; margin-right: 25px; margin-top: 50px;" v-on:click="imgClick"></img>
-          <img class="icon" src="img/disapprove.png" style="width:50px; margin-right: 25px; margin-top: 50px;" v-on:click="imgClick2"></img>
+          <img class="icon" src="approve.png" style="width:50px; margin-right: 25px; margin-top: 50px;" v-on:click="imgClick"></img>
+          <img class="icon" src="disapprove.png" style="width:50px; margin-right: 25px; margin-top: 50px;" v-on:click="imgClick2"></img>
           <p class="one">Likes:     {{ totalLikes[number] }}</p>
           <p class="one">Dislikes:  {{ totalDislikes[number] }}</p>
           <div id="app">
