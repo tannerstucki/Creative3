@@ -1,6 +1,3 @@
-Vue.component('star-rating', VueStarRating.default);
-//import axios from 'axios';
-
 var app = new Vue({
   el: '#app',
     data: {
@@ -16,12 +13,6 @@ var app = new Vue({
     addedName: '',
     addedComment: '',
     comments: {},
-    rating: 0,
-    totalRating: 0,
-    numberRatings: 0,
-    averageRatings: {},
-    averager: 0,
-    i: 0,
     el: document.body,
     posts: [],
     errors: [],
@@ -30,9 +21,6 @@ var app = new Vue({
     dislikes: 0,
     totalLikes: {},
     totalDislikes: {},
-    images: {},
-    j: 0,
-    currentImage: "img/flowers.jpg",
   },
   created: function() {
     this.xkcd();
@@ -141,21 +129,5 @@ var app = new Vue({
         }
         this.totalDislikes[this.number].push(this.dislikes);
     },
-    addRating: function(changer) {    
-        if (!(this.number in this.averageRatings)){
-          Vue.set(app.averageRatings, this.number, new Array)
-          this.totalRating = 0;
-          this.i = 0;  
-        }
-        this.i = this.i + 1;   
-        this.totalRating = this.totalRating + this.rating;
-        this.averager = this.totalRating / this.i;
-        if (this.number in this.averageRatings){
-          this.averageRatings[this.number].pop();
-        }
-        this.averageRatings[this.number].push({average: this.averager, total: this.totalRating, count: this.i})
-        this.averager = 0;
-        this.total = 0;     
-    }
   }
 });
